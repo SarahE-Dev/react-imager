@@ -8,7 +8,7 @@ export class Imager extends Component {
     state = {
         imagePaths: [`images/cloudheart.jpg`, `images/cloudrainbowheart.jpg`, `images/flowerheart.avif`, `images/galaxy.jpg`, `images/glassheart.avif`, `images/heartfire.jpg`, `images/heartfire2.jpg`, `images/heartlightning.jpg`, `images/hearttree.avif`, `images/leafheart.avif`, `images/outerspace.jpg`, `images/tinyheartclouds.jpg`],
         imageNumber: 0,
-        
+        displayImage: ''
         
     }
 
@@ -20,8 +20,7 @@ export class Imager extends Component {
 
     displayRandomImage=()=>{
        this.setState({
-        imageNumber: Math.floor(Math.random() * 12),
-        displayImage: this.state.imagePaths[this.state.imageNumber]
+        imageNumber: Math.floor(Math.random() * 12)
        })
     }
     displayNextImage=()=>{
@@ -51,9 +50,8 @@ export class Imager extends Component {
         })
       }
     }
-    displayImageClicked=(path, index)=>{
+    displayImageClicked=(index)=>{
       this.setState({
-        displayImage: this.state.imagePaths[index],
         imageNumber: index
       })
       
